@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Navbar from './components/Navbar'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import Home from './views/Home'
 import About from './views/About'
 import Contact from './views/Contact'
