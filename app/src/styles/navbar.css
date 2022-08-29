@@ -1,0 +1,42 @@
+nav {
+  margin: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 130px;
+  max-height: 100px;
+}
+
+.logo img {
+  width: 70%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  border-radius: 30px;
+  transition: 0.6s;
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+
+.registro {
+  border-radius: 30px;
+  padding: 15px;
+  background-color: #048c7f;
+  color: azure;
+}

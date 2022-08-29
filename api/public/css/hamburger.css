@@ -1,0 +1,48 @@
+/* Hamburger menu */
+
+.hamburger {
+  display: none;
+  width: fit-content;
+}
+
+@media screen and (max-width: 1000px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #048c7f;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    padding: 80px 20px;
+    gap: 10px;
+    transform: translate(100%, 0);
+    transition: all 0.3s ease;
+  }
+  nav ul li {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  nav ul li:hover {
+    padding: 10px;
+    background-color: #02ac9b;
+  }
+  .registro {
+    border-radius: 0;
+    padding: 0;
+    background-color: transparent;
+    color: black;
+  }
+  .hamburger {
+    display: block;
+  }
+  .active-menu {
+    transform: translate(0, 0);
+    transition: all 0.3s ease;
+  }
+  .conteiner {
+    margin-top: 50px;
+  }
+}

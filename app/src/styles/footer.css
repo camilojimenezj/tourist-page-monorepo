@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+  background: #048c7f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+}
+
+footer .footer-boton {
+  margin: 15px;
+  color: azure;
+}
+
+footer .footer-contenedor {
+  margin: 15px;
+  color: azure;
+}
+
+.footer-contenedor i {
+  margin: 0 10px;
+}
