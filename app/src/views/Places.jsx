@@ -9,7 +9,7 @@ import ModalAddPlace from '../components/ModalAddPlace'
 import { useSelector } from 'react-redux'
 
 function Places({ type }) {
-  const state = useSelector((store) => store)
+  const user = useSelector((store) => store)
 
   const [places, setPlaces] = useState([])
   const [currentPlace, setCurrentPlace] = useState('')
@@ -35,7 +35,7 @@ function Places({ type }) {
           key={place.id}
         />
       ))}
-      {state ? (
+      {user ? (
         <div className="add-card open-card" onClick={openModal2}>
           <img src={'/assets/add-img.svg'} alt="add-img" />
           <h3>Añadir Lugar</h3>

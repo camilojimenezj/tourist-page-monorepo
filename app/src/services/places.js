@@ -7,10 +7,12 @@ export const getAll = async (type) => {
   return data
 }
 
-export const createPlace = async (data) => {
+export const createPlace = async (data, token) => {
+  console.log(token)
   const res = await axios.post(baseUrl, data, {
     headers: {
-    "Content-Type": "multipart/form-data",
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`
     },
   });
   return res.data

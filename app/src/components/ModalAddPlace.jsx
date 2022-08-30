@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import Modal from '../components/Modal'
 import { createPlace } from '../services/places'
 
 function ModalAddPlace({ show, closeModal, type, setPlaces }) {
+  const user = useSelector((store) => store)
   const [file, setFile] = useState()
 
   const handleFileChange = (e) => {
@@ -16,7 +18,7 @@ function ModalAddPlace({ show, closeModal, type, setPlaces }) {
     formdata.append('description', e.target.description.value)
     formdata.append('type', type)
     formdata.append('img', file)
-    createPlace(formdata).then((res) => {
+    createPlace(formdata, user.token).then((res) => {
       setPlaces((prevPlaces) => [...prevPlaces, res])
       closeModal()
     })

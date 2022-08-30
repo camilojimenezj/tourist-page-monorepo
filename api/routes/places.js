@@ -1,7 +1,8 @@
 const placeRouter = require('express').Router()
 const upload = require('../upload')
 const Place = require('../models/place')
-/* const authorize = require('../middlewares/authorize') */
+const authorize = require('../middlewares/authorize') 
+const uploadImage = require('../utils/cloudinary')
 
 placeRouter.get('/:type', async (req, res) => {
   const type = req.params.type
@@ -10,9 +11,14 @@ placeRouter.get('/:type', async (req, res) => {
   res.status(200).json(list)
 })
 
-placeRouter.post('/', /* authorize, */ upload.upload, async (req, res) => {
+placeRouter.post('/', authorize, upload.upload, async (req, res) => {
   let { title, description, type } = req.body
-  const img = '/assets/' + req.file.filename
+
+  const path = req.file.path
+  const imageUploaded = await uploadImage(path)
+  console.log(imageUploaded)
+
+  const img = imageUploaded.secure_url
   description = description
     .split('.\r')
     .map((e) => e.replace(/(\r\n|\n|\r)/gm, ''))
