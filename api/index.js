@@ -6,13 +6,11 @@ const app = express()
 const http = require('http')
 require('./database')
 const sockets = require('./sockets')
-const morgan = require('morgan')
 
 // settings
 app.use(express.static('../app/dist'))
 
 // middlewares
-app.use(morgan('tiny'))
 app.use(cors())
 app.use(express.static(path.join(__dirname, '/public')))
 app.use(express.json())
