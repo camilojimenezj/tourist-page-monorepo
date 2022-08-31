@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 120px) !important;
+  height: fit-content;
+}
+
+.addCard {
+  width: 450px;
+  height: 500px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #ececec;
+  border: 1px dashed silver;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.addCard:hover {
+  background-color: #fff;
+}
+
+.addCard img {
+  width: 60px;
+  margin: 0 auto;
+}
+
+.addCard h3 {
+  text-align: center;
+  margin-top: 10px;
+  color: #a8a8a8;
+}

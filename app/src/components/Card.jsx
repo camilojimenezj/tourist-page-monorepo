@@ -1,19 +1,21 @@
 import { requireComments } from '../services/socket'
+import styles from '../styles/card.module.css'
 
 function Card({ place, openModal, setCurrentPlace }) {
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault()
     requireComments(place.title)
     setCurrentPlace(place.title)
     openModal()
   }
 
   return (
-    <div className="card">
-      <div className="face front">
+    <div className={styles.card}>
+      <section className={styles.front}>
         <img src={place.img} alt={place.title} />
         <h3>{place.title}</h3>
-      </div>
-      <div className="face back">
+      </section>
+      <section className={styles.back}>
         <h3>{place.title}</h3>
         {place.description.map((paragraph, i) => (
           <div key={i}>
@@ -21,7 +23,7 @@ function Card({ place, openModal, setCurrentPlace }) {
             <br />
           </div>
         ))}
-        <div className="link">
+        <div className={styles.link}>
           <a
             className="hero__cta"
             href="#"
@@ -31,7 +33,7 @@ function Card({ place, openModal, setCurrentPlace }) {
             COMENTARIOS.
           </a>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

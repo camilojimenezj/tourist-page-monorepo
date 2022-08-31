@@ -1,16 +1,19 @@
-import "../styles/places.css";
+import styles from '../styles/modal.module.css'
 
 function ModalComments({ children, show, closeModal }) {
-  const styleShow = show ? "modal--show" : "";
-  const handlePropagation = (e) => e.stopPropagation();
+  const styleShow = show ? 'modalShow' : ''
+  const handlePropagation = (e) => e.stopPropagation()
 
   return (
-    <section className={`modal ${styleShow}`} onClick={closeModal}>
-      <div className="modal__container" onClick={handlePropagation}>
+    <section
+      className={`${styles.modal} ${styles[styleShow]}`}
+      onClick={closeModal}
+    >
+      <div className={styles.modalContainer} onClick={handlePropagation}>
         {children}
       </div>
     </section>
-  );
+  )
 }
 
-export default ModalComments;
+export default ModalComments

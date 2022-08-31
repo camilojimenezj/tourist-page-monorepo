@@ -1,4 +1,3 @@
-import '../styles/places.css'
 import { getAll as getAllPlaces } from '../services/places'
 import { useEffect, useState } from 'react'
 import Card from '../components/Card'
@@ -8,6 +7,7 @@ import { loadComments } from '../services/socket'
 import ModalAddPlace from '../components/ModalAddPlace'
 import { useSelector } from 'react-redux'
 import BarLoader from 'react-spinners/BarLoader'
+import styles from '../styles/places.module.css'
 
 function Places({ type }) {
   const user = useSelector((store) => store)
@@ -30,7 +30,7 @@ function Places({ type }) {
   }, [])
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       {loading && (
         <div className="spinner-container">
           <BarLoader size={1} color={'#048c7f'} loading={loading} />
@@ -46,7 +46,7 @@ function Places({ type }) {
         />
       ))}
       {user ? (
-        <div className="add-card open-card" onClick={openModal2}>
+        <div className={styles.addCard} onClick={openModal2}>
           <img src={'/assets/add-img.svg'} alt="add-img" />
           <h3>Añadir Lugar</h3>
         </div>

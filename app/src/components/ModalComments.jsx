@@ -1,8 +1,8 @@
-import '../styles/places.css'
 import Modal from '../components/Modal'
 import Comment from '../components/Comment'
 import { saveComment } from '../services/socket'
 import { useSelector } from 'react-redux'
+import styles from '../styles/comments.module.css'
 
 function ModalComments({
   show,
@@ -27,23 +27,22 @@ function ModalComments({
 
   return (
     <Modal show={show} closeModal={closeModal}>
-      <div className="conteiner_modal">
-        <div className="Comentario">
+      <div className={styles.container}>
+        <div>
           <h1>Comentarios</h1>
-          <div className="comment-container">
+          <div className={styles.commentContainer}>
             {comments.map((comment, i) => (
               <Comment comment={comment} key={i} />
             ))}
           </div>
-          <form className="comment-form" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <p>
-              <label htmlFor="mensaje" className="colocar_mensaje">
+              <label htmlFor="mensaje">
                 Mensaje
-                <span className="obligatorio">*</span>
+                <span>*</span>
               </label>
               <textarea
                 name="comment"
-                className="texto_mensaje"
                 id="mensaje"
                 required="obligatorio"
                 placeholder="Deja aquí tu comentario..."
@@ -52,26 +51,16 @@ function ModalComments({
             </p>
             {state ? (
               <div>
-                <button
-                  className="modal__close"
-                  type="submit"
-                  name="enviar_formulario"
-                  id="enviar"
-                >
+                <button type="submit" id="enviar">
                   <p>Enviar</p>
                 </button>
               </div>
             ) : (
               <div>
-                <button
-                  className="disabled"
-                  name="enviar_formulario"
-                  id="enviar"
-                  disabled
-                >
+                <button className={styles.disabled} id="enviar" disabled>
                   <p>Enviar</p>
                 </button>
-                <p className="disabled-text">
+                <p className={styles.disabledText}>
                   <a href="/login">Ingresa</a> para comentar
                 </p>
               </div>

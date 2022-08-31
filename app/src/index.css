@@ -11,6 +11,13 @@ body {
   height: 100vh;
 }
 
+main {
+  min-height: calc(100vh - 120px) !important;
+  height: fit-content;
+  display: grid;
+  place-content: center;
+}
+
 .spinner-container {
   position: fixed;
   width: 100%;
@@ -20,11 +27,4 @@ body {
   display: grid;
   place-content: center;
   background: rgb(255, 255, 255);
-}
-
-main {
-  min-height: calc(100vh - 120px) !important;
-  height: fit-content;
-  display: grid;
-  place-content: center;
 }

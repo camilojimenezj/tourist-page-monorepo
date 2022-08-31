@@ -1,16 +1,18 @@
+import styles from '../styles/comments.module.css'
+
 function Comment({ comment }) {
   return (
-    <div className="comment-card">
-      <div className="user">
-        <p className="name">
+    <div className={styles.commentCard}>
+      <div className={styles.user}>
+        <p>
           <b>{comment.name}</b>
         </p>
       </div>
-      <div className="text">
-        <p className="comment">{comment.comment}</p>
+      <div className={styles.text}>
+        <p>{comment.comment}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Comment;
+export default Comment

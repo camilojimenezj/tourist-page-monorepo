@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Modal from '../components/Modal'
 import { createPlace } from '../services/places'
+import styles from '../styles/forms.module.css'
 
 function ModalAddPlace({ show, closeModal, type, setPlaces }) {
   const user = useSelector((store) => store)
@@ -27,29 +28,31 @@ function ModalAddPlace({ show, closeModal, type, setPlaces }) {
 
   return (
     <Modal show={show} closeModal={closeModal}>
-      <div className="conteiner_contactame">
-        <div className="Comentario">
-          <h1>Añadir lugar</h1>
-          <div className="comment-container"></div>
-          <form encType="multipart/form-data" onSubmit={handleSubmit}>
-            <label htmlFor="title">Nombre</label>
-            <input type="text" name="title" id="title" />
-            <p>
-              <label htmlFor="description" className="description-label">
-                Descripción
-                <span className="obligatorio">*</span>
-              </label>
-              <textarea
-                name="description"
-                className="description"
-                id="description"
-                required="obligatorio"
-                placeholder="Descripción del lugar"
-              ></textarea>
-            </p>
-            <input type="hidden" name="type" value="{{type}}" />
-
-            <label htmlFor="file-upload" className="custom-file-upload">
+      <div className={styles.formContainer}>
+        <h1>Añadir lugar</h1>
+        <form encType="multipart/form-data" onSubmit={handleSubmit}>
+          <label htmlFor="title">Nombre</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Nombre del lugar"
+          />
+          <p>
+            <label htmlFor="description">
+              Descripción
+              <span>*</span>
+            </label>
+            <textarea
+              name="description"
+              id="description"
+              required="obligatorio"
+              placeholder="Descripción del lugar"
+            ></textarea>
+          </p>
+          <input type="hidden" name="type" value="{{type}}" />
+          <div className={styles.file}>
+            <label htmlFor="file-upload">
               <p>Imagen</p>
               <img src="/assets/upload-img.svg" alt="" />
             </label>
@@ -59,18 +62,12 @@ function ModalAddPlace({ show, closeModal, type, setPlaces }) {
               id="file-upload"
               onChange={handleFileChange}
             />
+          </div>
 
-            <button
-              className="modal__close"
-              type="submit"
-              name="enviar_formulario"
-              id="enviar"
-              data-type="{{type}}"
-            >
-              <p>Enviar</p>
-            </button>
-          </form>
-        </div>
+          <button type="submit" name="enviar_formulario" id="enviar">
+            <p>Enviar</p>
+          </button>
+        </form>
       </div>
     </Modal>
   )
