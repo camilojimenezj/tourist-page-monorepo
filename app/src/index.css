@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=Noto+Serif:wght@400;700&family=Outfit:wght@500&family=Raleway:wght@200;300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -18,4 +20,11 @@ body {
   display: grid;
   place-content: center;
   background: rgb(255, 255, 255);
+}
+
+main {
+  min-height: calc(100vh - 120px) !important;
+  height: fit-content;
+  display: grid;
+  place-content: center;
 }

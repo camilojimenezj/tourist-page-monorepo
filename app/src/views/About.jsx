@@ -1,9 +1,9 @@
-import '../styles/views.css'
+import styles from '../styles/about.module.css'
 
 function About() {
   return (
     <main>
-      <div className="conteiner_acerca">
+      <div className={styles.container}>
         <img src="/assets/about-logo.jpg" alt="about-logo" />
         <h2>Objetivo</h2>
         <p>

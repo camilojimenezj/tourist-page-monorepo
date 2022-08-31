@@ -1,4 +1,4 @@
-.form-container {
+.formContainer {
   width: 460px;
   height: auto;
   border-radius: 10px;
@@ -6,7 +6,7 @@
   background-color: #fbfbfb;
 }
 
-.form-container input {
+.formContainer input {
   background-color: #fbfbfb;
   width: 408px;
   height: 40px;
@@ -19,7 +19,7 @@
   margin-bottom: 20px;
 }
 
-.form-container textarea {
+.formContainer textarea {
   background-color: #fbfbfb;
   width: 405px;
   height: 150px;
@@ -33,12 +33,12 @@
   padding-top: 15px;
 }
 
-.form-container label {
+.formContainer label {
   display: block;
   float: center;
 }
 
-.form-container button {
+.formContainer button {
   height: 45px;
   padding-left: 5px;
   padding-right: 5px;
@@ -53,47 +53,26 @@
   cursor: pointer;
 }
 
-.form-container button p {
+.formContainer button p {
   color: azure;
 }
 
-.form-container .aviso {
+.formContainer span {
   font-size: 13px;
-  color: #0e0e0e;
 }
 
-.form-container h1 {
+.formContainer h1 {
   font-size: 39px;
   text-align: letf;
   padding-bottom: 20px;
   color: #048c7f;
 }
 
-.form-container h3 {
+.formContainer h3 {
   font-size: 16px;
   padding-bottom: 30px;
-  color: #0e0e0e;
 }
 
-.form-container p {
+.formContainer p {
   font-size: 14px;
-  color: #0e0e0e;
-}
-
-::-webkit-input-placeholder {
-  color: #a8a8a8;
-}
-
-::-webkit-textarea-placeholder {
-  color: #a8a8a8;
-}
-
-.formulario input:focus {
-  outline: 0;
-  border: 1px solid #325358;
-}
-
-.formulario textarea:focus {
-  outline: 0;
-  border: 1px solid #325358;
 }

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import "../styles/views.css";
+import { Link } from 'react-router-dom'
+import styles from '../styles/home.module.css'
 
 function Home() {
   return (
     <main>
-      <div className="conteiner">
-        <div className="home">
+      <div className={styles.container}>
+        <div className={styles.home}>
           <h1>Explorar tu alredor</h1>
           <p>
             Senderos y Rutas en su maxima expresición busca crear un espacio
@@ -14,21 +14,17 @@ function Home() {
             aventura o una caminata de senderismo todo lo que necesitas son
             ganas de explorar.
           </p>
-          <div className="botton">
-            <Link className="boton" to="/paths">
-              Senderos
-            </Link>
-            <Link className="boton" to="/routes">
-              Rutas
-            </Link>
+          <div className={styles.button}>
+            <Link to="/paths">Senderos</Link>
+            <Link to="/routes">Rutas</Link>
           </div>
         </div>
-        <div className="homepanal">
+        <div className={styles.image}>
           <img src="assets/home-image.svg" alt="Home-image" />
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default Home;
+export default Home
