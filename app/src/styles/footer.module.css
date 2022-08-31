@@ -1,4 +1,4 @@
-footer {
+.footer {
   width: 100%;
   background: #048c7f;
   display: flex;
@@ -7,16 +7,11 @@ footer {
   padding: 0 9%;
 }
 
-footer .footer-boton {
+.footer div {
   margin: 15px;
   color: azure;
 }
 
-footer .footer-contenedor {
-  margin: 15px;
-  color: azure;
-}
-
-.footer-contenedor i {
+.footer i {
   margin: 0 10px;
 }

@@ -4,7 +4,7 @@ function About() {
   return (
     <main>
       <div className="conteiner_acerca">
-        <img src="/assets/e3b821a0444d8fd2959ff68f89944cb6.jpg" alt="" />
+        <img src="/assets/about-logo.jpg" alt="about-logo" />
         <h2>Objetivo</h2>
         <p>
           Crear un web site que les permitirá a los usuarios conocer nuevos

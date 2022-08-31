@@ -1,34 +1,34 @@
-import { registerUser } from "../services/register";
-import { useNavigate } from "react-router-dom";
-import "../styles/forms.css";
-import { useContext } from "react";
-import { MessageContext } from "../context/MessageContext";
+import { registerUser } from '../services/register'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { MessageContext } from '../context/MessageContext'
+import '../styles/forms.css'
 
 function Register() {
-  const navigate = useNavigate();
-  const { setFlashMessage } = useContext(MessageContext);
+  const navigate = useNavigate()
+  const { setFlashMessage } = useContext(MessageContext)
 
   const setFlashSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const newUser = {
       email: e.target.email.value,
       name: e.target.name.value,
       password: e.target.password.value,
-    };
+    }
     registerUser(newUser)
       .then((res) => {
-        navigate("/login");
-        setFlashMessage("Successfully registered");
+        navigate('/login')
+        setFlashMessage('Successfully registered')
       })
       .catch((err) => {
-        console.error(err);
-        setFlashMessage("Email already taken", "warning");
-      });
-  };
+        console.error(err)
+        setFlashMessage('Email already taken', 'warning')
+      })
+  }
 
   return (
     <main>
-      <div className="conteiner_contactame">
+      <div className="form-container">
         <div className="Registrate">
           <h1>Registrate</h1>
           <form onSubmit={setFlashSubmit}>
@@ -81,7 +81,7 @@ function Register() {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default Register;
+export default Register

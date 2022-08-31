@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeUser } from '../reducers/userReducer'
-import '../styles/navbar.css'
+import styles from '../styles/navbar.module.css'
 
 function Navbar() {
   const state = useSelector((store) => store)
@@ -16,8 +16,8 @@ function Navbar() {
   }
 
   return (
-    <nav>
-      <div className="logo">
+    <nav className={styles.nav}>
+      <div className={styles.logo}>
         <img src="assets/logo.jpg" alt="logo" onClick={() => navigate('/')} />
       </div>
       <ul className="menu">

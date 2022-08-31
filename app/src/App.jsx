@@ -1,17 +1,12 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './views/Home'
-import About from './views/About'
-import Contact from './views/Contact'
-import Login from './views/Login'
-import Register from './views/Register'
-import Places from './views/Places'
 import { useContext, useEffect } from 'react'
 import { setUser } from './reducers/userReducer'
 import { MessageContext } from './context/MessageContext'
-import NotFound from './views/NotFound'
+import AlertMessage from './components/AlertMessage'
+import RoutesComponent from './components/RoutesComponent'
 
 function App() {
   const state = useSelector((state) => state)
@@ -28,26 +23,9 @@ function App() {
 
   return (
     <Router>
-      {message && (
-        <div className="alert-container">
-          <div className="alert">
-            <h3>{message}</h3>
-          </div>
-        </div>
-      )}
+      {message && <AlertMessage message={message} />}
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/paths" element={<Places type="paths" />} />
-        <Route path="/routes" element={<Places type="routes" />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-
+      <RoutesComponent />
       <Footer />
     </Router>
   )
