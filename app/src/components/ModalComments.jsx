@@ -1,8 +1,8 @@
-import "../styles/places.css";
-import Modal from "../components/Modal";
-import Comment from "../components/Comment";
-import { saveComment } from "../services/socket";
-import { useSelector } from "react-redux";
+import '../styles/places.css'
+import Modal from '../components/Modal'
+import Comment from '../components/Comment'
+import { saveComment } from '../services/socket'
+import { useSelector } from 'react-redux'
 
 function ModalComments({
   show,
@@ -11,19 +11,19 @@ function ModalComments({
   setComments,
   currentPlace,
 }) {
-  const state = useSelector((store) => store);
+  const state = useSelector((store) => store)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    saveComment(state.name, e.target.comment.value, currentPlace);
+    e.preventDefault()
+    saveComment(state.name, e.target.comment.value, currentPlace)
     const newComment = {
       name: state.name,
       comment: e.target.comment.value,
       place: currentPlace,
-    };
-    setComments((preComments) => [...preComments, newComment]);
-    e.target.reset();
-  };
+    }
+    setComments((preComments) => [...preComments, newComment])
+    e.target.reset()
+  }
 
   return (
     <Modal show={show} closeModal={closeModal}>
@@ -80,7 +80,7 @@ function ModalComments({
         </div>
       </div>
     </Modal>
-  );
+  )
 }
 
-export default ModalComments;
+export default ModalComments

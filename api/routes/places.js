@@ -3,6 +3,7 @@ const upload = require('../upload')
 const Place = require('../models/place')
 const authorize = require('../middlewares/authorize') 
 const uploadImage = require('../utils/cloudinary')
+const fs = require('fs-extra')
 
 placeRouter.get('/:type', async (req, res) => {
   const type = req.params.type
@@ -16,7 +17,7 @@ placeRouter.post('/', authorize, upload.upload, async (req, res) => {
 
   const path = req.file.path
   const imageUploaded = await uploadImage(path)
-  console.log(imageUploaded)
+  await fs.unlink(path)
 
   const img = imageUploaded.secure_url
   description = description

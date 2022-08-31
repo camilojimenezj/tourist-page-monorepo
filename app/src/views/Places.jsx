@@ -7,10 +7,12 @@ import { useModal } from '../hooks/useModal'
 import { loadComments } from '../services/socket'
 import ModalAddPlace from '../components/ModalAddPlace'
 import { useSelector } from 'react-redux'
+import BarLoader from 'react-spinners/BarLoader'
 
 function Places({ type }) {
   const user = useSelector((store) => store)
 
+  const [loading, setLoading] = useState(false)
   const [places, setPlaces] = useState([])
   const [currentPlace, setCurrentPlace] = useState('')
   const [comments, setComments] = useState([])
@@ -18,8 +20,10 @@ function Places({ type }) {
   const [isOpenModal2, openModal2, closeModal2] = useModal()
 
   useEffect(() => {
+    setLoading(true)
     getAllPlaces(type).then((places) => {
       setPlaces(places)
+      setLoading(false)
     })
 
     loadComments(setComments)
@@ -27,6 +31,12 @@ function Places({ type }) {
 
   return (
     <div className="container">
+      {loading && (
+        <div className="spinner-container">
+          <BarLoader size={1} color={'#048c7f'} loading={loading} />
+        </div>
+      )}
+
       {places.map((place) => (
         <Card
           place={place}

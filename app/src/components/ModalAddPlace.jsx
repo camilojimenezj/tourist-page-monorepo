@@ -21,6 +21,7 @@ function ModalAddPlace({ show, closeModal, type, setPlaces }) {
     createPlace(formdata, user.token).then((res) => {
       setPlaces((prevPlaces) => [...prevPlaces, res])
       closeModal()
+      e.target.reset()
     })
   }
 
