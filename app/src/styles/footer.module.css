@@ -15,3 +15,9 @@
 .footer i {
   margin: 0 10px;
 }
+
+@media screen and (max-width: 900px) {
+  .links {
+    display: none;
+  }
+}

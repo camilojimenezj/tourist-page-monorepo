@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .imgLogin {
@@ -16,7 +17,7 @@
 }
 
 .container form {
-  width: 400px;
+  max-width: 400px;
 }
 
 .container form img {
@@ -44,4 +45,13 @@
 
 .btn {
   cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .imgLogin {
+    display: none;
+  }
+  .container {
+    margin: 0;
+  }
 }

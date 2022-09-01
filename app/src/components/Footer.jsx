@@ -9,7 +9,7 @@ function Footer() {
           <span> Camilo Jimenez</span>
         </p>
       </div>
-      <div>
+      <div className={styles.links}>
         <i className="fa-brands fa-facebook"></i>
         <i className="fa-brands fa-instagram"></i>
         <i className="fa-brands fa-whatsapp"></i>

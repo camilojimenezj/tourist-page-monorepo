@@ -37,3 +37,9 @@
   transform: var(--transform);
   transition: var(--transition);
 }
+
+@media screen and (max-width: 900px) {
+  .modalContainer {
+    width: 100%;
+  }
+}

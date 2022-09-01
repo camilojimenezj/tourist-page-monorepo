@@ -16,6 +16,7 @@
 .home p {
   color: rgb(0, 0, 0);
   font-size: 17px;
+  line-height: 26px;
   letter-spacing: 3px;
 }
 
@@ -50,4 +51,13 @@
   color: azure;
   letter-spacing: 5px;
   font-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+  .image {
+    display: none;
+  }
+  .home {
+    width: 100%;
+  }
 }

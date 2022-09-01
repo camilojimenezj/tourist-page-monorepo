@@ -18,6 +18,7 @@
 
 .nav ul {
   list-style: none;
+  z-index: 1000;
 }
 
 .nav ul li {
