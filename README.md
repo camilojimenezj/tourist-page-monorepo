@@ -8,6 +8,8 @@ Create a web site that will allow users to learn about new tourist destinations 
 
 * Design a web site taking into account the analysis of the information collected and that serves to solve the problem encountered.
 
+## Demo
+
 ```
 https://tourist-page.herokuapp.com/
 ```
