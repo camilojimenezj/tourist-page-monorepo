@@ -19,7 +19,7 @@ https://tourist-page.herokuapp.com/
 ### Desktop
 ![Captura de pantalla 2022-09-01 181416](https://user-images.githubusercontent.com/102927455/188027916-4df0e012-93c8-4835-a71b-87d4a954d344.jpg)
 ### Mobile
-![WhatsApp Image 2022-08-31 at 8 12 42 PM](https://user-images.githubusercontent.com/102927455/188028084-1611dac0-ddae-4c18-9670-5d0a8abe6a9a.jpeg)
+<img src="https://user-images.githubusercontent.com/102927455/188028084-1611dac0-ddae-4c18-9670-5d0a8abe6a9a.jpeg" style="width: 400px" />
 
 ## Technologies used
 
